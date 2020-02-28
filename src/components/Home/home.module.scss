@@ -1,0 +1,38 @@
+.st{
+	border-radius: 15px 50px;
+	width: 12rem;
+	height: 13rem;
+	border: 2px solid black;
+	padding: 10px;
+	border-radius: 3px 50px;
+	background: linear-gradient(180deg, #80E6FF 50px, #00CCFF 10px);
+}
+.Sticky {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 0.5fr 1.5fr;
+}
+
+.Header{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.title{
+	border: none;
+	width: 10rem;
+	height: 2rem;
+	background-color:transparent;
+	outline: none;
+}
+
+.content{
+	width: 11rem;
+	height: 8.5rem;
+	resize: none;
+	background-color:
+	transparent;
+	border: none;
+	padding: 0.5rem;
+	scrollbar-width: none;
+}
