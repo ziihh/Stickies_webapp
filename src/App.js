@@ -1,11 +1,11 @@
 import React from "react";
 
-import StickyNotesHome from "./components/Home/home.jsx";
+import Header from "./components/Header/header.jsx";
 
 export default function App() {
   return (
   	<div>
-    	<StickyNotesHome />
+  		<Header/>
     </div>
   );
 }

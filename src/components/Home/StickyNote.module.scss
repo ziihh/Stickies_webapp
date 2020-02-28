@@ -1,11 +1,23 @@
-.st{
+
+#defaultNoteStyle{
 	border-radius: 15px 50px;
 	width: 12rem;
 	height: 13rem;
 	border: 2px solid black;
 	padding: 10px;
 	border-radius: 3px 50px;
+}
+
+.BlueNote{
 	background: linear-gradient(180deg, #80E6FF 50px, #00CCFF 10px);
+}
+.YellowNote{
+	background: linear-gradient(180deg, #FFF4B5 50px, #FFE96A 10px);
+}
+
+.BlackNote{
+	background: linear-gradient(180deg, #808080 50px, #000000 10px);
+	color: white;
 }
 .Sticky {
 	display: grid;
