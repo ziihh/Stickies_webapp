@@ -37,9 +37,9 @@ Home is responsiable for rendering navBar and body.
 ### Windows or Mac
 - Clone git repository https://github.com/ziihh/Stickies_webapp.git
 - From the root folder of the repository run the following command;
-    - cd sticky_webapp
-    - npm install
-    - npm start
+    - `cd sticky_webapp`
+    - `npm install`
+    - `npm start`
 - The web application can be view by navigating to http://localhost:3000/
 
 ## Explaination
