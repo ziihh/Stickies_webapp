@@ -34,6 +34,10 @@ This is the folder structure for this task and what it includes in each folder. 
 App.js renders the component Home.
 Home is responsiable for rendering navBar and body.
 ## How to run application?
+
+### Prerequisites
+- Install Node.js https://nodejs.org/en/download/
+
 ### Windows or Mac
 - Clone git repository https://github.com/ziihh/Stickies_webapp.git
 - From the root folder of the repository run the following command;
