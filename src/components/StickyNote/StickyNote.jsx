@@ -7,10 +7,20 @@ import block from "../../media/SVG/block.svg";
 import drag from "../../media/SVG/drag.svg";
 
 class StickyNote extends React.Component {
+	constructor(props) {
+		super(props);
+	}
 	render() {
+		var colorStyles = "YellowNote";
+		if(this.props.color === "YELLOWNOTE"){
+			colorStyles = "" + classes.YellowNote;
+		} else if (this.props.color === "BLUENOTE") {
+			colorStyles = "" + classes.BlueNote;
+		} else {
+			colorStyles = "" + classes.BlackNote;
+		}
 		return (
-			<div className={classes.YellowNote} id={classes.defaultNoteStyle}>
-
+			<div className={colorStyles} id={classes.defaultNoteStyle}>
 				<div className={classes.Sticky}>
 					<div className={classes.Header}>
 						<SVG src={block} />

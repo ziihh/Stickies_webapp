@@ -1,11 +1,11 @@
 import React from "react";
 
-import Header from "./components/Header/header.jsx";
+import Home from "./components/Home/home.jsx";
 
 export default function App() {
   return (
   	<div>
-  		<Header/>
+  		<Home/>
     </div>
   );
 }
