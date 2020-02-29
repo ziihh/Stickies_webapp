@@ -1,23 +1,37 @@
-
+.Home {
+	width: 100%;
+	background-color: #F7F7F9;
+}
 .HeaderContainer{
 	display: grid;
   	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   	grid-template-rows: 100%;
-	width:100%;
+	width: 70%;
+	padding-left: 3rem;
 	background-color: #F7F7F9;
 	height: 4.5rem;
 }
 .HomeContainer{
-	display: flex;
+	display: inline-block;
 	overflow: hidden;
 	position:fixed;
-	    width: 100%;
-    margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	background-image:url("../../media/Images/background.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 }
 .Wrapper{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+.Header{
+	font-weight: 500;
+	font-size: 1.2rem;
+	padding: 0.6rem;
 }
 .Heading{
 	padding: 0.5rem;
@@ -31,9 +45,52 @@
 .ColorOption{
 	border: none;
 }
-select {
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-   /* Add custom arrow */
+
+.DropdownColor {
+	overflow: hidden;
+	align-self: center;
+}
+
+.DropdownColorContent {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.DropdownColorContent a {
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.DropdownColor:hover .DropdownColorContent {
+	display: block;
+}
+
+.YellowBackGround {
+	background-color: #FFE96A;
+	color: #000000;
+}
+
+.BlackBackGround {
+	background-color: #000000;
+	color: #FFFFFF;
+}
+
+.BlueBackGround {
+	background-color: #00CCFF;
+	color: #000000;
+}
+
+SVG{
+	fill: grey;
+	cursor: pointer;
+}
+
+SVG:hover{
+	fill:black;
 }
