@@ -32,10 +32,10 @@ class StickyNote extends React.Component {
 			<div className={colorStyles} id={classes.defaultNoteStyle} ref={`sticky-note-${this.props.id}`}>
 				<div className={classes.Sticky}>
 					<div className={classes.Header}>
-						<SVG src={block} />
+						<SVG src={block} width={`1rem`}/>
 						<label htmlFor="title" />
 						<input  id={`noteHeader${this.props.id}`} onKeyUp={this.saveValue} type="text" defaultValue={this.props.headerContent} name="title" className={classes.Title}/>
-						<SVG src={drag} />
+						<SVG src={drag} width={`1rem`}/>
 					</div>
 					<div className="NoteArea">
 						<textarea id={`noteBody${this.props.id}`} onKeyUp={this.saveValue} className={classes.Content} rows="4" cols="50" ref="stNoteBody" defaultValue={this.props.bodyContent}>

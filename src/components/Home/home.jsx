@@ -114,6 +114,7 @@ class Home extends React.Component {
 						headerContent={this.state.notesData[i].headerContent}
 						bodyContent={this.state.notesData[i].bodyContent}
 						id={i}
+						key={"sticky-note-" + i}
 					/>
 				);
 			};
@@ -135,6 +136,7 @@ class Home extends React.Component {
 							headerContent={this.state.notesData[i].headerContent}
 							bodyContent={this.state.notesData[i].bodyContent}
 							id={i}
+							key={"sticky-note-" + i}
 						/>
 					);
 				};
