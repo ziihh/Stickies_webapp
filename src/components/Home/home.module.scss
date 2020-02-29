@@ -87,10 +87,9 @@
 }
 
 SVG{
-	fill: grey;
 	cursor: pointer;
 }
 
-SVG:hover{
-	fill:black;
+.DefaultSVGStyle:hover{
+	fill:grey;
 }

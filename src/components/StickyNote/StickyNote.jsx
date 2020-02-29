@@ -14,12 +14,14 @@ class StickyNote extends React.Component {
 	}
 
 	saveValue(event) {
-		var id = event.target.id;  // get the sender's id to save it .
-        var val = event.target.value; // get the value.
-        localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override .
+		// save the value in local storage.
+		var id = event.target.id;
+        var val = event.target.value;
+        localStorage.setItem(id, val);
 	}
 
 	render() {
+		// Find out which CSS class is to be set on the note style.
 		var colorStyles = "YellowNote";
 		if(this.props.color === "YELLOWNOTE"){
 			colorStyles = "" + classes.YellowNote;
@@ -28,6 +30,7 @@ class StickyNote extends React.Component {
 		} else {
 			colorStyles = "" + classes.BlackNote;
 		}
+
 		return (
 			<div className={colorStyles} id={classes.defaultNoteStyle} ref={`sticky-note-${this.props.id}`}>
 				<div className={classes.Sticky}>

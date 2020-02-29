@@ -5,8 +5,10 @@ Functionalities created in this task are:
 - Create new note
 - Edit note
 - Delete all notes
-- Move sticky note
-- Change color of note
+- Change color of new note
+- Minimal styling on UI layout
+
+
 ## Code structure
 - stickies app
     - sticky_notes

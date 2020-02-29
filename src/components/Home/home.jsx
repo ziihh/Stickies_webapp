@@ -23,21 +23,27 @@ class Home extends React.Component {
 		this.getInitState = this.getInitState.bind(this);
 		this.onHashChange = this.onHashChange.bind(this);
 
+		// Get the initial state.
 	    this.state = this.getInitState();
 
 	}
+
 	componentDidMount() {
+		// Set the selected color and event on page.
 		this.state.selectedColor = window.location.hash.split('#')[1];
       	window.addEventListener("beforeunload", this.onPageUnload);
       	window.addEventListener("hashchange", this.onHashChange);
     }
+
 	addNote() {
+		// Increase the nr of notes by 1.
 		this.setState({
 			nrOfNotes: this.state.nrOfNotes + 1
 		});
 	}
 
 	deleteAllNotes(){
+		// Reset the state as it was new.
 		this.setState({
 		  nrOfNotes: 0,
 		  notesData: [],
@@ -52,6 +58,7 @@ class Home extends React.Component {
 		var notesData = [];
 		var renderNotes = [];
 
+		// Get the stored note data in local storage.
 		if(localStorage.getItem("SelectColor")) {
 			selectColor = localStorage.getItem("SelectColor")
 		}
@@ -83,9 +90,8 @@ class Home extends React.Component {
 	}
 
 	onPageUnload(event) {
+		// On refresh store the data in local storage.
 		for (var i = 0; i < this.state.nrOfNotes; i++) {
-
-			console.log(localStorage.getItem(this.state.notesData[i].noteHeaderId));
 			this.state.notesData[i].headerContent = localStorage.getItem(this.state.notesData[i].noteHeaderId);
 			this.state.notesData[i].bodyContent = localStorage.getItem(this.state.notesData[i].noteBodyId);
 		}
@@ -101,13 +107,16 @@ class Home extends React.Component {
 
 	render() {
 		var noOfNotesToRender = 0;
-		var noPush = true;
+
+		// has page been reloaded?
 		if(this.state.isReloaded) {
 			noOfNotesToRender = 0;		// Render all notes.
-			this.state.isReloaded = false;
+			this.state.isReloaded = false;	// Reset the isReloaded.
 
+			// Loop through the nr of notes to be rendered.
 			for (var i = noOfNotesToRender; i < this.state.nrOfNotes; i += 1) {
 
+				// Fill the array with Note component to be rendered.
 				this.state.renderNotes.push(
 					<StickyNote
 						color={this.state.notesData[i].color}
@@ -118,9 +127,13 @@ class Home extends React.Component {
 					/>
 				);
 			};
-		} else {
+		} else {	// Page has not been refreshed.
+			// Only the last note is to be rendered.
 			noOfNotesToRender = (this.state.nrOfNotes - 1); // Render only the last note added.
 			if (this.state.nrOfNotes != 0) {
+
+				// JUST NOTICED I DONT NEED A LOOP,
+				// But this would create note data and push a Note component to the TOBE rendered array.
 				for (var i = noOfNotesToRender; i < this.state.nrOfNotes; i += 1) {
 					this.state.notesData.push({
 						key: "sticky-note-" + i,
@@ -150,20 +163,20 @@ class Home extends React.Component {
 						<h1 className={classes.Header}>Stickiess app</h1>
 					</div>
 					<div className={classes.Wrapper}>
-						<SVG src={file}  width={`2rem`} />
+						<SVG className={classes.DefaultSVGStyle} src={file}  width={`2rem`} />
 						<p className={classes.NonClickHeading}>{this.state.nrOfNotes}</p>
 					</div>
 					<div className={classes.Wrapper} onClick={this.addNote} >
-						<SVG src={plus} width={`1.5rem`}  />
+						<SVG className={classes.DefaultSVGStyle} src={plus} width={`1.5rem`}  />
 						<p className={classes.Heading}>Add Note</p>
 					</div>
 					<div className={classes.Wrapper} onClick={this.deleteAllNotes} >
-						<SVG src={trash} width={`1.5rem`}  />
+						<SVG className={classes.DefaultSVGStyle} src={trash} width={`1.5rem`}  />
 						<p className={classes.Heading}>Delete all notes</p>
 					</div>
 
 					<div className={classes.Wrapper} onClick={this.onChangeColorSelection} >
-						<SVG src={draw} width={`2rem`}  />
+						<SVG className={classes.DefaultSVGStyle} src={draw} width={`2rem`}  />
 						<p className={classes.Heading}>Color</p>
 						<div className={classes.DropdownColor}>
 
